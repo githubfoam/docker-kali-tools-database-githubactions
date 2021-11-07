@@ -10,7 +10,7 @@ on:
 jobs:
 
   ubuntu-latest-job:
-    name: "kali-tools-database ubuntu 20.04"
+    name: "kali-tools-database ubuntu latest"
     runs-on: ubuntu-latest
     env:
       distribution: "kalilinux" #https://hub.docker.com/r/kalilinux/kali-rolling
@@ -38,14 +38,7 @@ jobs:
         docker system df -v               
         docker image inspect ${name}   
         docker container ls -a
-    - name: "ınteractive bash kali linux"
-      run: |
-        # destroyed afterwards (use --rm )
-        # all subsequent Dockerfile commands generate new images and the cache is not used
-        sudo docker build --no-cache --rm  -t ${name} . --file dockerfiles/${dockerfilename} 
-        docker run --tty --interactive kali/kali-tools-database /bin/bash
-
-                         
+                  
 
   ubuntu-2004-job:
     name: "kali-tools-database ubuntu  20.04"
