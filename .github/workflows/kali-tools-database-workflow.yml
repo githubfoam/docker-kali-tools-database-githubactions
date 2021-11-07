@@ -17,25 +17,25 @@ jobs:
       dockerfilename: "Dockerfile.kalilinux.kali-tools-database"
     steps:
     - uses: actions/checkout@v2
-    - name: "os fingerprinting"
-      run: |
-        hostnamectl status
-        lsb_release -a
-        lsb_release -d
-        cat /etc/lsb-release
-        cat /etc/issue
-        cat /etc/os-release
-        sudo apt-get install -y neofetch && neofetch   
-    - name: "docker build kali linux"
-      run: |
-        # destroyed afterwards (use --rm )
-        # all subsequent Dockerfile commands generate new images and the cache is not used
-        sudo docker build --no-cache --rm  -t ${name}:${version} . --file dockerfiles/${dockerfilename} 
-        docker image ls
-        docker image history ${name}:${version} 
-        docker system df -v               
-        docker image inspect ${name}:${version}   
-        docker container ls -a
+    # - name: "os fingerprinting"
+    #   run: |
+    #     hostnamectl status
+    #     lsb_release -a
+    #     lsb_release -d
+    #     cat /etc/lsb-release
+    #     cat /etc/issue
+    #     cat /etc/os-release
+    #     sudo apt-get install -y neofetch && neofetch   
+    # - name: "docker build kali linux"
+    #   run: |
+    #     # destroyed afterwards (use --rm )
+    #     # all subsequent Dockerfile commands generate new images and the cache is not used
+    #     sudo docker build --no-cache --rm  -t ${name}:${version} . --file dockerfiles/${dockerfilename} 
+    #     docker image ls
+    #     docker image history ${name}:${version} 
+    #     docker system df -v               
+    #     docker image inspect ${name}:${version}   
+    #     docker container ls -a
     # - name: "tool interactive kali linux"
     #   run: |
     #     docker pull kalilinux/kali-rolling
@@ -45,9 +45,12 @@ jobs:
       run: |
         docker build --no-cache --rm  -t ${name}/${version} . --file dockerfiles/${dockerfilename} 
         docker run -d --name kalitool ${name}:${version} /bin/bash  
-        docker container ls -a 
-        # docker run --tty --interactive kalitool /bin/bash     
-        docker exec kalitool ls -la
+        docker container ls 
+        # docker run --tty --interactive kalitool /bin/bash  
+        docker top nagios   
+        docker ps 
+        docker container top kalitool 
+        docker exec kalitool ls
         
 
   # ubuntu-2004-job:
