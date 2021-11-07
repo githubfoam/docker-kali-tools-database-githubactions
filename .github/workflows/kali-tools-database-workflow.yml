@@ -47,8 +47,7 @@ jobs:
         docker run -d --name kalitool ${name}:${version} /bin/bash  
         docker container ls 
         # docker run --tty --interactive kalitool /bin/bash  
-        docker kalitool
-        docker top nagios    
+        docker top kalitool    
         docker container top kalitool 
         docker exec kalitool ls
         
