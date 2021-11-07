@@ -43,7 +43,7 @@ jobs:
     #     docker run --tty --interactive kalilinux/kali-rolling /bin/bash
     - name: "interactive kali linux"
       run: |
-        docker build --no-cache --rm  -t ${name}/${version} . --file dockerfiles/${dockerfilename} 
+        docker build --no-cache --rm  -t ${name}:${version} . --file dockerfiles/${dockerfilename} 
         docker run -d --name kalitool ${name}:${version} /bin/bash  
         docker container ls 
         # docker run --tty --interactive kalitool /bin/bash  
