@@ -44,11 +44,11 @@ jobs:
     - name: "interactive kali linux"
       run: |
         docker build --no-cache --rm  -t ${name}:${version} . --file dockerfiles/${dockerfilename} 
-        docker run -d --name kalitool ${name}:${version} /bin/bash  
-        docker container ls 
+        docker run -d --name kalitool ${name}:${version}  
         # docker run --tty --interactive kalitool /bin/bash  
         docker top kalitool    
         docker container top kalitool 
+        docker container ls 
         docker exec kalitool ls
         
 
