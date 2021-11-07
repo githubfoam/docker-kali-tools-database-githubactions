@@ -1,5 +1,6 @@
 # docker-kali-tools-database-githubactions
 
+[![kali-tools-database CI workflow](https://github.com/githubfoam/docker-kali-tools-database-githubactions/actions/workflows/kali-tools-database-workflow.yml/badge.svg?branch=main)](https://github.com/githubfoam/docker-kali-tools-database-githubactions/actions/workflows/kali-tools-database-workflow.yml)  
 ~~~
 https://www.kali.org/blog/kali-linux-metapackages/
 https://www.kali.org/docs/general-use/metapackages/
