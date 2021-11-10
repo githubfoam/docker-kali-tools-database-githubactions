@@ -8,7 +8,7 @@ on:
 jobs:
 
 # https://github.com/marketplace/actions/owasp-zap-baseline-scan
- ubuntu-latest-zap-baseline -basic-job:
+ ubuntu-latest-zap-baseline-basic-job:
     name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,7 @@ jobs:
           target: 'https://www.zaproxy.org'            
 
 # https://github.com/marketplace/actions/owasp-zap-baseline-scan
- ubuntu-latest-zap-baseline -advanced-job:
+ ubuntu-latest-zap-baseline-advanced-job:
     name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
      steps:

@@ -22,6 +22,7 @@ jobs:
  ubuntu-latest-zap-full-advanced-job:
     name: "The OWASP ZAP Full Scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
     runs-on: ubuntu-latest
+    steps:
       - name: "ZAP Baseline Scan"
         uses: zaproxy/action-full-scan@v0.3.0
         with:
