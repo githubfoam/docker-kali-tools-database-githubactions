@@ -27,7 +27,7 @@ jobs:
  ubuntu-latest-zap-baseline-advanced-job:
     name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
-     steps:
+    steps:
       - name: "ZAP Baseline Scan"
         uses: zaproxy/action-baseline@v0.6.1
         with:
