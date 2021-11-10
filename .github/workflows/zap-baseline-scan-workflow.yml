@@ -28,10 +28,6 @@ jobs:
     name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
      steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: master
       - name: "ZAP Baseline Scan"
         uses: zaproxy/action-baseline@v0.6.1
         with:
