@@ -17,7 +17,7 @@ RUN apt-get update -y && apt-get upgrade -y && apt-get autoremove - && apt-get c
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && \
     apt-get install -y kali-tools-database && \
     apt depends kali-tools-database  && \
-    apt show kali-tools-database &&
+    apt show kali-tools-database
 
 
 # custom packages
