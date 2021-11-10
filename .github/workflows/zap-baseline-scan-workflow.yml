@@ -9,7 +9,7 @@ jobs:
 
 # https://github.com/marketplace/actions/owasp-zap-baseline-scan
  ubuntu-latest-zap-baseline-basic-job:
-    name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
+    name: "basic - the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
     steps:
       - name: "ZAP Baseline Scan"
@@ -25,7 +25,7 @@ jobs:
 
 # https://github.com/marketplace/actions/owasp-zap-baseline-scan
  ubuntu-latest-zap-baseline-advanced-job:
-    name: " the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
+    name: "advanced -  the OWASP ZAP Baseline scan to find vulnerabilities in your web application ubuntu latest"
     runs-on: ubuntu-latest
     steps:
       - name: "ZAP Baseline Scan"

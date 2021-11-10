@@ -10,7 +10,7 @@ jobs:
 
 # https://github.com/marketplace/actions/owasp-zap-api-scan
  ubuntu-latest-zap-api-basic-job:
-    name: "the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
+    name: "basic - the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
     runs-on: ubuntu-latest
     steps:
       - name: "ZAP API Scan"
@@ -26,7 +26,7 @@ jobs:
 
 # https://github.com/marketplace/actions/owasp-zap-api-scan
  ubuntu-latest-zap-full-advanced-job:
-    name: "the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
+    name: "advanced - the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
     runs-on: ubuntu-latest
     steps:
       - name: "ZAP API Scan"
