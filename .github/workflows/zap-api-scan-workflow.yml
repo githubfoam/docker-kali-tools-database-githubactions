@@ -1,38 +1,46 @@
-name: "kali-tools-database CI workflow"
+name: "ZAP API Scan CI workflow"
 
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
+  schedule:
+      - cron:  '0 0 1 * *' ##execution of a task in the first minute of the month 
 
 jobs:
 
-# https://github.com/marketplace/actions/owasp-zap-full-scan
- ubuntu-latest-zap-full-basic-job:
-    name: "The OWASP ZAP Full Scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
+# https://github.com/marketplace/actions/owasp-zap-api-scan
+ ubuntu-latest-zap-api-basic-job:
+    name: "the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
     runs-on: ubuntu-latest
     steps:
-      - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.3.0
+      - name: "ZAP API Scan"
+        uses: zaproxy/action-api-scan@v0.1.0
         with:
         # https://github.com/OWASP/OWASP-VWAD/blob/master/src/data/online.json
-          target: 'http://testphp.vulnweb.com'    
+          target: 'https://www.zaproxy.org/'     
+      - name: "ZAP API Scan"
+        uses: zaproxy/action-api-scan@v0.1.0
+        with:
+        # https://github.com/OWASP/OWASP-VWAD/blob/master/src/data/online.json
+          target: 'http://testphp.vulnweb.com'            
 
-# https://github.com/marketplace/actions/owasp-zap-full-scan
+# https://github.com/marketplace/actions/owasp-zap-api-scan
  ubuntu-latest-zap-full-advanced-job:
-    name: "The OWASP ZAP Full Scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
+    name: "the OWASP ZAP API scan to perform Dynamic Application Security Testing (DAST) ubuntu latest"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: master
-      - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.3.0
+      - name: "ZAP API Scan"
+        uses: zaproxy/action-api-scan@v0.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
-          target: 'http://demo.testfire.net/'
+          format: openapi
+          target: 'https://www.zaproxy.org/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
 
