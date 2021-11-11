@@ -18,7 +18,8 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     apt-get install -y kali-tools-database && \
     echo "########################### METAPACKAGE INFO ###########################" && \
     apt depends kali-tools-database  && \
-    apt show kali-tools-database
+    apt show kali-tools-database && \
+    echo "########################### METAPACKAGE INFO ###########################"
 
 
 # custom packages
