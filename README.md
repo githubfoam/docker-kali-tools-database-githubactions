@@ -11,4 +11,17 @@ $ docker pull kalilinux/kali-rolling
 $ docker run --tty --interactive kalilinux/kali-rolling /bin/bash
 https://www.kali.org/docs/containers/using-kali-docker-images/
 
+########################### METAPACKAGE INFO ###########################
+kali-tools-database
+  Depends: jsql-injection
+  Depends: mdbtools
+  Depends: oscanner
+  Depends: sidguesser
+  Depends: sqldict
+  Depends: sqlitebrowser
+  Depends: sqlmap
+  Depends: sqlninja
+  Depends: sqlsus
+  Depends: tnscmd10g
+
 ~~~
